@@ -22,5 +22,5 @@ cd rpmbuild
 
 rpmbuild --buildroot "`pwd`/BUILDROOT" ../tomcat.spec -bb --define "_topdir `pwd`"
 
-publish-rpm $VERSION $RELEASE $ARCH tomcat "RPMS/$ARCH/apache-tomcat-$VERSION-$RELEASE.$ARCH.rpm"
+publish-rpm $VERSION $RELEASE $ARCH tomcat "RPMS/$ARCH/tomcat-$VERSION-$RELEASE.$ARCH.rpm"
 
