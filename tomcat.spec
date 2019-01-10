@@ -2,23 +2,22 @@
 #
 # sudo yum -y install rpmdevtools && rpmdev-setuptree
 #
-# wget https://raw.github.com/nmilford/rpm-tomcat8/master/tomcat8.spec -O ~/rpmbuild/SPECS/tomcat8.spec
-# wget https://raw.github.com/nmilford/rpm-tomcat8/master/tomcat8.init -O ~/rpmbuild/SOURCES/tomcat8.init
-# wget https://raw.github.com/nmilford/rpm-tomcat8/master/tomcat8.sysconfig -O ~/rpmbuild/SOURCES/tomcat8.sysconfig
-# wget https://raw.github.com/nmilford/rpm-tomcat8/master/tomcat8.logrotate -O ~/rpmbuild/SOURCES/tomcat8.logrotate
-# wget http://www.motorlogy.com/apache/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz -O ~/rpmbuild/SOURCES/apache-tomcat-7.0.55.tar.gz
-# rpmbuild -bb ~/rpmbuild/SPECS/tomcat8.spec
+# wget https://raw.github.com/bizxsoft/rpm-tomcat/master/tomcat.spec -O ~/rpmbuild/SPECS/tomcat.spec
+# wget https://raw.github.com/bizxsoft/rpm-tomcat/master/tomcat.init -O ~/rpmbuild/SOURCES/tomcat.init
+# wget https://raw.github.com/bizxsoft/rpm-tomcat/master/tomcat.sysconfig -O ~/rpmbuild/SOURCES/tomcat.sysconfig
+# wget https://raw.github.com/bizxsoft/rpm-tomcat/master/tomcat.logrotate -O ~/rpmbuild/SOURCES/tomcat.logrotate
+# rpmbuild -bb ~/rpmbuild/SPECS/tomcat.spec
 
 %define __jar_repack %{nil}
-%define tomcat_home /usr/share/tomcat8
-%define tomcat_group tomcat8
-%define tomcat_user tomcat8
-%define tomcat_user_home /var/lib/tomcat8
-%define tomcat_cache_home /var/cache/tomcat8
+%define tomcat_home /usr/share/tomcat
+%define tomcat_group tomcat
+%define tomcat_user tomcat
+%define tomcat_user_home /var/lib/tomcat
+%define tomcat_cache_home /var/cache/tomcat
 
 Summary:    Apache Servlet/JSP Engine, RI for Servlet 3.1/JSP 2.3 API
-Name:       tomcat8
-Version:    8.0.24
+Name:       tomcat
+Version:    8.5.9
 BuildArch:  noarch
 Release:    1
 License:    Apache Software License
@@ -160,6 +159,8 @@ if [ $1 -ge 1 ]; then
 fi
 
 %changelog
+* Thu Jan 10 2019 bizxsoft <xmen。lin@qq.com>
+- 8.5.9
 * Thu Sep 4 2014 Edward Bartholomew <edward@bartholomew>
 - 7.0.55
 * Mon Jul 1 2013 Nathan Milford <nathan@milford.io>
